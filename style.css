@@ -1,0 +1,46 @@
+body {
+    /* background: linear-gradient(90deg, blue, yellow); */
+    background: url(https://img.freepik.com/free-photo/mountainous-landscape-with-fog_1150-18328.jpg?w=1480&t=st=1729493950~exp=1729494550~hmac=2bec27349531429838a74d23d674a10de4e951e95511ce5bf735371b114c2a2f);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat ;
+}
+
+p {
+    color: blue;
+}
+.mobil {
+    color: aqua;
+}
+
+#BMW {
+    color: red;
+}
+#Avanza {
+    /* color: aqua; */
+    color: #fff;
+}
+
+.text {
+    color: rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.content {
+    border-radius: 30px;
+    background-color: cyan;
+    width: 200px;
+    height: 300px;
+    align-content: center;
+    text-align: center;
+    border: 5px solid orange;
+    transition: 1s;
+    
+}
+
+.content:hover {
+    background-color: pink;
+
+}
+

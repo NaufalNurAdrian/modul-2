@@ -1,0 +1,48 @@
+.img {
+    height: 200px;
+    
+}
+ 
+body {
+    margin: 0;
+    padding: auto;
+    min-height: 100vh;
+    background-color: aliceblue;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-family: sans-serif;
+}
+
+.bord {
+    border-radius: 10px;
+    border: 2px solid black;
+    text-align: center;
+    padding: 20px;
+    width: 500px;
+    align-items: center;
+    margin-top: auto;
+    margin: auto;
+    
+}
+
+.button {
+    border-radius: 10px;
+    padding: 15px;
+    width: 120px;
+    background-color: aqua;
+    border: 2px solid black;
+    transition: 0.2s ease-in ;
+    align-content: center;
+    cursor: pointer;
+    
+}
+.button:hover {
+    background-color: azure;
+}
+
+.gambar {
+    height: 100px ;
+}
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" aria-label="nama"/>
+        <input type="password" aria-label="nama" required/>
+        <input type="checkbox" aria-label="check"/>
+        <input type="radio" aria-label="radio"/>
+        <input type="number" aria-label="nomor" min="1" max="10"/>
+        <input type="submit" aria-label="submit" value="OK"/>
+        <textarea rows="3" aria-label="nama" cols="64"></textarea>
+    </form>
+    <button type="ok" onclick="doSomethink()"> submit </button>
+    <p>Apa Warna vaforitmu</p>
+    <select>
+        <option>Merah</option>
+        <option selected>Biru</option>
+        <option>Kuning</option>
+        
+    </select>
+
+
+<fieldset>
+    <legend>Data Diri</legend>
+    <p>
+        <label for="nama"> nama </label>
+        <input type="txt" name="nama">
+    </p>
+    <p>
+        <label for="usia">Usia</label>
+        <input type="number" name="usia">
+    </p>
+</fieldset>
+
+
+    <script>
+        function doSomethink() {
+            alert("ok");
+        }
+    </script>
+
+
+</body>
+</html>
