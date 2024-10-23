@@ -9,21 +9,22 @@ html {
     width: 100%;
     background-color: white;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-    box-sizing: border-box;
+    justify-content: center;
+    align-content: space-between;
+    top: 0;
     position: fixed;
+    z-index: 1000;
+    padding: 0 20px;
 }
 .navitem {
-    margin: 50px, auto;
-    text-align: center;
     display: flex;
     gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
 }
 .navitem a {
     margin: 15px;
-    text-align: center;
     color: black;
     text-decoration: none;
 }
@@ -34,8 +35,9 @@ html {
     text-decoration: underline;
 }
 .logo {
-    height: 70px;
+    margin: 5px;
     width: auto;
+    margin-right: auto;
 }
 .home {
     display: grid;
@@ -88,14 +90,10 @@ html {
     align-content: center;
 }
 @media screen and (max-width: 800px){
-    .home {
-        flex-direction: column-reverse;
+    .gambar {
+        grid-template-columns: 1fr;
     }
     .deskripsi {
         grid-template-columns: 1fr;
     }
-    body {
-        flex-direction: column-reverse;
-    }
-
 }

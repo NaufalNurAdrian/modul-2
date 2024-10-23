@@ -11,7 +11,7 @@ function Navbar (props: IProps) {
         <div className="navbar">
             <img alt="logo" src={logo} className="logo"/>
             <Navitem />
-            <p>Halo, {props.name}</p>
+            <p></p>
             
         </div>
     )
