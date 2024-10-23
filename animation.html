@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .box {
+            position: relative;
+            width: 800px;
+            height: 800px;
+            /* margin: 50px; */
+            background-color: purple;
+            animation-name: example;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            /* transform: translate(100px, 100px);
+            transform: rotate(45deg); */
+            /* transform: perspective(700px) translateX(100px); */
+        }
+        /* @keyframes example {
+            from {
+                background-color: purple;
+            }
+            to {
+                background-color: yellow;
+            }
+        } */
+        @keyframes example {
+            0% {background-color: purple; left: 0px; top: 0px; rotate: 0deg;}
+            25% {background-color: purple; left: 200px; top: 0px; rotate: 45deg;}
+            50% {background-color: purple; left: 200px; top: 0px; rotate: 90deg;}
+            75% {background-color: purple; left: 0px; top: 200px; rotate: 135deg;}
+            100% {background-color: purple; left: 0px; top: 0px; rotate: 180deg;}
+        }
+    </style>
+</head>
+<body>
+    <div class="box">"box"</div>
+</body>
+</html>
