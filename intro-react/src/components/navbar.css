@@ -1,0 +1,93 @@
+*,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", "Arial", sans-serif;
+}
+body {
+    background-color: rgb(213, 213, 213);
+}
+.navbar {
+    height: 40px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.navitem {
+    margin: 50px, auto;
+    text-align: center;
+    display: flex;
+    gap: 20px;
+}
+.navitem a {
+    margin: 15px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+}
+.navitem a:hover {
+    cursor: pointer;
+    color: solid black;
+    transform: translate(0, -2px);
+    text-decoration: underline;
+}
+.logo {
+    height: 30px;
+    width: auto;
+}
+#root{
+    background-color: rgb(194, 191, 186);
+    height: 100vh;
+
+}
+.item {
+    background-color: aliceblue;
+    height: 100vh;
+}
+.akhir {
+    background-color: rgb(194, 191, 186);
+    height: 100vh;
+}
+.home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gambar {
+    width: 350px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.deskripsi {
+    display: grid;
+    width: 400px;
+    gap: 20px;
+}
+.judul {
+    background-color: white;
+    text-align: start;
+    font-size: 2cm;
+    padding: 15px;
+}
+.isi {
+    font-size: 1cm;
+    
+}
+@media screen and (max-width: 800px){
+    .home {
+        flex-direction: column-reverse;
+    }
+    .deskripsi {
+        grid-template-columns: 1fr;
+    }
+    body {
+        flex-direction: column-reverse;
+    }
+
+}
