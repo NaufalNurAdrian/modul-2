@@ -1,6 +1,6 @@
 import "./navbar.css"
 import Navitem from "./navitem.tsx"
-import logo from '../assets/apple.png'
+import logo from '../assets/logo.png'
 
 interface IProps {
     name: string

@@ -5,6 +5,8 @@ function HomePage () {
     const str: string = "Hello!"
     return (
         <div className="home">
+
+        <div className="pertama">
             <div className="gambar">
                 <img src={Gambar} alt="Gambar"  className="gambar"/>
             </div>
@@ -14,6 +16,12 @@ function HomePage () {
                 <p className="isi">I'm Naufal Nur Adrian, a web developer</p>
                 <Button />
             </div>
+
+        </div>
+            
+            <div className="tengah">qwe</div>
+            <div className="akhir">asd</div>
+            
         </div>
     )
 }

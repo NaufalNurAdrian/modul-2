@@ -1,17 +1,23 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-const StyledButton = styled.button`
+const StyledLink = styled.a`
     background-color: white;
     font-size: 20px;
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 5px;
-    width: 200px;
-`
+    width: 170px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+`;
 
-function Button () {
+function Button() {
     return (
-        <StyledButton>Read More</StyledButton>
-    )
+        <StyledLink href="https://github.com/NaufalNurAdrian/" target="_blank" rel="noopener noreferrer">
+            Read More
+        </StyledLink>
+    );
 }
 
-export default Button
+export default Button;
