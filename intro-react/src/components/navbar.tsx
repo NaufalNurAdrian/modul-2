@@ -2,11 +2,8 @@ import "./navbar.css"
 import Navitem from "./navitem.tsx"
 import logo from '../assets/logo.png'
 
-interface IProps {
-    name: string
-}
 
-function Navbar (props: IProps) {
+function Navbar () {
     return (
         <div className="navbar">
             <img alt="logo" src={logo} className="logo"/>

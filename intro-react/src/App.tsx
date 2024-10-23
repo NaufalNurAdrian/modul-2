@@ -5,10 +5,9 @@ import HomePage from "./pages/home"
 import { Routes, Route} from "react-router-dom"
 
 function App() {
-  const name: string = "Naufal Nur Adrian"
   return (
     <div>
-      <Navbar name={name} />
+      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="About" element={<AboutPage />} />
