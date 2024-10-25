@@ -27,7 +27,7 @@ const About: React.FC = () => {
   return (
     <div
       ref={aboutRef}
-      className={`aboutpage flex flex-col justify-center items-center mt-20 h-screen transition-opacity duration-700 ${
+      className={`aboutpage flex flex-col justify-center items-center mt-20 min-h-screen transition-opacity duration-700 ${
         animate ? "opacity-100" : "opacity-0"
       }`}
     >
@@ -69,20 +69,21 @@ const About: React.FC = () => {
         >
           <div className="text-base sm:text-lg max-w-xs sm:max-w-sm md:w-96">
             <p>Name: Naufal Nur Adrian</p>
-
             <p>Place, Date of birth: Jakarta, October 24 2005</p>
-
             <p>Residence: Bogor</p>
           </div>
         </div>
       </div>
 
-      {/* Programming Language Section moved down */}
-      <div className="mt-64 sm:mt-72">
-        {" "}
-        {/* Increased margin-top for more spacing */}
+      {/* Programming Language Section */}
+      <div className="mt-20 sm:mt-24"> {/* Adjusted margin-top for better spacing */}
         <ProgramingLanguage />
       </div>
+
+      {/* Footer */}
+      <footer className="w-full text-center p-4 bg-gray-800 text-white mt-8">
+        <p>© 2023 Naufal Nur Adrian. All rights reserved.</p>
+      </footer>
     </div>
   );
 };
