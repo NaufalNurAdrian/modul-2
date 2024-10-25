@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
     <footer className="footer footer-center bg-base-200 text-base-content rounded p-10">
       {/* Links */}
       <nav className="grid grid-flow-col gap-4">
-        <a className="link link-hover" href="/about">About us</a>
-        <a className="link link-hover" href="/contac">Contact</a>
-        <a className="link link-hover" href="/port">Portfolio</a>
-        <a className="link link-hover" href="/">Home</a>
+        <Link to="/About">About us</Link>
+        <a href="/contact">Contact</a>
+        <a href="/port">Portfolio</a>
+        <a href="/">Home</a>
       </nav>
 
       {/* Social media icons */}

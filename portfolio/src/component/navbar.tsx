@@ -26,7 +26,7 @@ function Navbar() {
         <li><Link to="/port">Portfolio</Link></li>
         <li><a href="https://github.com/NaufalNurAdrian" target="_blank">Git Hub</a></li>
         <li><Link to="/About">About</Link></li>
-        <li><Link to="/contac">Contact</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
       </ul>
     </div>
   </div> 
