@@ -7,9 +7,9 @@ const Footer: React.FC = () => {
       {/* Links */}
       <nav className="grid grid-flow-col gap-4">
         <Link to="/About">About us</Link>
-        <a href="/contact">Contact</a>
-        <a href="/port">Portfolio</a>
-        <a href="/">Home</a>
+        <Link to="/contact">Contact</Link>
+        <Link to="/port">Portfolio</Link>
+        <Link to="/">Home</Link>
       </nav>
 
       {/* Social media icons */}
