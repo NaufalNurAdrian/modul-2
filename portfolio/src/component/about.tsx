@@ -79,11 +79,6 @@ const About: React.FC = () => {
       <div className="mt-20 sm:mt-24"> {/* Adjusted margin-top for better spacing */}
         <ProgramingLanguage />
       </div>
-
-      {/* Footer */}
-      <footer className="w-full text-center p-4 bg-gray-800 text-white mt-8">
-        <p>© 2023 Naufal Nur Adrian. All rights reserved.</p>
-      </footer>
     </div>
   );
 };
