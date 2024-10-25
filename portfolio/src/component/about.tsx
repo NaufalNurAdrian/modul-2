@@ -76,7 +76,7 @@ const About: React.FC = () => {
       </div>
 
       {/* Programming Language Section */}
-      <div className="mt-20 sm:mt-24"> {/* Adjusted margin-top for better spacing */}
+      <div className="mt-56 sm:mt-60"> {/* Adjusted margin-top for better spacing */}
         <ProgramingLanguage />
       </div>
     </div>
