@@ -1,20 +1,51 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Contact: React.FC = () => {
+  const [animate, setAnimate] = useState(false);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setAnimate(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center mt-10">
-      <div className="max-w-6xl w-full mx-auto bg-white p-10 shadow-md grid grid-cols-1 lg:grid-cols-2 gap-10">
+    <div className="min-h-screen flex items-center justify-center mt-10 px-4 sm:px-8 lg:px-0">
+      <div
+        ref={sectionRef}
+        className={`max-w-6xl w-full mx-auto bg-white p-6 sm:p-10 shadow-md grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 transition-opacity duration-1000 transform ${
+          animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         {/* Left side - Contact Info */}
-        <div className="space-y-5">
-          <h2 className="text-4xl font-bold">Get in touch</h2>
-          <p>
-            Feel free to reach out to us for any inquiries. Our team is always
-            ready to assist you!
+        <div
+          className={`space-y-5 transition-transform duration-1000 ${
+            animate ? "translate-x-0" : "-translate-x-20"
+          }`}
+        >
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">Get in touch</h2>
+          <p className="text-gray-700">
+            Feel free to reach out to us for any inquiries. Our team is always ready to assist you!
           </p>
-          <div className="space-y-2">
+          <div className="space-y-2 text-gray-700">
             <p className="flex items-center">
               <svg
-                className="w-5 h-5 mr-2"
+                className="w-5 h-5 mr-2 text-indigo-600"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
@@ -31,7 +62,7 @@ const Contact: React.FC = () => {
             </p>
             <p className="flex items-center">
               <svg
-                className="w-5 h-5 mr-2"
+                className="w-5 h-5 mr-2 text-indigo-600"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
@@ -48,7 +79,7 @@ const Contact: React.FC = () => {
             </p>
             <p className="flex items-center">
               <svg
-                className="w-5 h-5 mr-2"
+                className="w-5 h-5 mr-2 text-indigo-600"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
@@ -67,42 +98,46 @@ const Contact: React.FC = () => {
         </div>
 
         {/* Right side - Contact Form */}
-        <form className="space-y-4">
+        <form
+          className={`space-y-4 transition-transform duration-1000 ${
+            animate ? "translate-x-0" : "translate-x-20"
+          }`}
+        >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <input
-              className="border p-3 rounded-md"
+              className="border p-3 rounded-md focus:outline-none focus:border-indigo-500"
               type="text"
               placeholder="First name"
               required
             />
             <input
-              className="border p-3 rounded-md"
+              className="border p-3 rounded-md focus:outline-none focus:border-indigo-500"
               type="text"
               placeholder="Last name"
               required
             />
           </div>
           <input
-            className="border p-3 w-full rounded-md"
+            className="border p-3 w-full rounded-md focus:outline-none focus:border-indigo-500"
             type="email"
             placeholder="Email"
             required
           />
           <input
-            className="border p-3 w-full rounded-md"
+            className="border p-3 w-full rounded-md focus:outline-none focus:border-indigo-500"
             type="tel"
             placeholder="Phone number"
             required
           />
           <textarea
-            className="border p-3 w-full rounded-md"
+            className="border p-3 w-full rounded-md focus:outline-none focus:border-indigo-500"
             placeholder="Message"
             rows={5}
             required
           ></textarea>
           <button
             type="submit"
-            className="bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-500"
+            className="bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-500 transition-all duration-300"
           >
             Send message
           </button>
