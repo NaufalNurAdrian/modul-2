@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import profil from "../assets/profil.png";
+import profil from "../assets/logo.png";
 
 const About: React.FC = () => {
   const [animate, setAnimate] = useState(false);

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import MyMarquee from './mymarquee';
+import Logo from '../assets/logo.png'
 
 const Hero: React.FC = () => {
   const [animate, setAnimate] = useState(false);
@@ -38,7 +39,7 @@ const Hero: React.FC = () => {
       <div className="hero-content flex flex-col lg:flex-row-reverse items-center text-center lg:text-left px-6 sm:px-10 lg:px-20">
         {/* Responsive Image */}
         <img
-          src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
+          src={ Logo }
           className={`max-w-full sm:max-w-xs md:max-w-sm lg:max-w-md rounded-lg shadow-2xl transform transition-transform duration-1000 ${animate ? 'translate-y-0' : '-translate-y-12'}`}
           alt="Hero"
         />
