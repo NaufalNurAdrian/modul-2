@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
         <li><Link to="/About">About Us</Link></li>
         <li><Link to="/contac" >Contact</Link></li>
         <li><Link to="/port" >Portfolio</Link></li>
-        <li><Link to="/home" >Home</Link></li>
+        <li><Link to="/" >Home</Link></li>
         
       </ul>
 
