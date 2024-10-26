@@ -1,11 +1,12 @@
-/** @type {import('tailwindcss').Config} */
+import daisyui from 'daisyui';
+import tailwindcss from 'tailwindcss';
 
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       animation: {
-        marquee: "marquee 10s linear infinite", // Reduced duration from 15s to 10s
+        marquee: "marquee 10s linear infinite",
       },
       keyframes: {
         marquee: {
@@ -15,5 +16,5 @@ export default {
       },
     },
   },
-  plugins: [require('daisyui')],
+  plugins: [tailwindcss, daisyui],  // Ensure plugins array includes both Tailwind CSS and DaisyUI
 };

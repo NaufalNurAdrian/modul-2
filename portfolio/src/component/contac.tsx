@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Contact: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Trigger animation after component mounts
+    setIsVisible(true);
+  }, []);
+
   return (
     <div className="min-h-screen flex items-center justify-center mt-10">
-      <div className="max-w-6xl w-full mx-auto bg-white p-10 shadow-md grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div
+        className={`max-w-6xl w-full mx-auto bg-white p-10 shadow-md grid grid-cols-1 lg:grid-cols-2 gap-10 transition-opacity duration-700 ${
+          isVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
         {/* Left side - Contact Info */}
-        <div className="space-y-5">
+        <div
+          className={`space-y-5 transform transition-transform duration-700 ${
+            isVisible ? "translate-x-0" : "-translate-x-10 opacity-0"
+          }`}
+        >
           <h2 className="text-4xl font-bold">Get in touch</h2>
           <p>
             Feel free to reach out to us for any inquiries. Our team is always
@@ -67,7 +82,11 @@ const Contact: React.FC = () => {
         </div>
 
         {/* Right side - Contact Form */}
-        <form className="space-y-4">
+        <form
+          className={`space-y-4 transform transition-transform duration-700 ${
+            isVisible ? "translate-x-0" : "translate-x-10 opacity-0"
+          }`}
+        >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <input
               className="border p-3 rounded-md"
