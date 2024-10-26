@@ -10,7 +10,7 @@ const MyMarquee = () => {
   return (
     <div className='marquee mt-10 px-2 sm:px-4'>
       <Marquee
-        className='Logo bg-slate-100 h-20 sm:h-24 md:h-28 lg:h-32'
+        className='Logo bg-slate-100 h-12 sm:h-14 md:h-16 lg:h-20' // Further reduced heights
         speed={50}
         style={{ borderRadius: '15px' }}
       >
@@ -21,7 +21,7 @@ const MyMarquee = () => {
               <img
                 src={logo}
                 alt={`${logo} Logo`}
-                className="w-10 h-auto sm:w-12 md:w-14 lg:w-16"
+                className="w-8 h-auto sm:w-10 md:w-12 lg:w-14" // Adjusted image sizes
               />
             </a>
           </div>
