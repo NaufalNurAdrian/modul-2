@@ -1,20 +1,13 @@
-import daisyui from 'daisyui';
-import tailwindcss from 'tailwindcss';
+/** @type {import('tailwindcss').Config} */
 
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {
-      animation: {
-        marquee: "marquee 10s linear infinite",
-      },
-      keyframes: {
-        marquee: {
-          "0%": { transform: "translateX(100%)" },
-          "100%": { transform: "translateX(-100%)" },
-        },
-      },
-    },
+    extend: {},
   },
-  plugins: [tailwindcss, daisyui],  // Ensure plugins array includes both Tailwind CSS and DaisyUI
-};
+  plugins: [require('daisyui'),],
+  
+}
+
+
