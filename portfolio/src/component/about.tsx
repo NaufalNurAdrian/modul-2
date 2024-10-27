@@ -58,9 +58,9 @@ const About: React.FC = () => {
           className={`data text-center sm:text-left flex-1 transition-transform duration-700 ${animate ? 'translate-x-0' : 'translate-x-[50%]'}`}
         >
           <div className="text-sm sm:text-base lg:text-lg max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg px-4">
-            <p>Nama: Naufal Nur Adrian</p>
-            <p>Tempat, Tanggal Lahir: Jakarta, 24 Oktober 2005</p>
-            <p>Tempat Tinggal: Bogor</p>
+            <p>Name: Naufal Nur Adrian</p>
+            <p>Place, Date of Birth: Jakarta, 24 Oktober 2005</p>
+            <p>Residence: Bogor</p>
           </div>
         </div>
       </div>
