@@ -1,17 +1,11 @@
+import Carousel from "@/components/Carousel";
 import Content from "@/components/Content";
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
-import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
     <div>
-      <div>
-        <Navbar />
-        <Hero />
-        <Content />
-        <Footer />
-      </div>
+      <Carousel />
+      <Content />
     </div>
   );
 }
