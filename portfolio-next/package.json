@@ -1,5 +1,5 @@
 {
-  "name": "blog-cms",
+  "name": "portfolio-next",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,16 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "contentful-resolve-response": "^1.9.0",
+    "@heroicons/react": "^2.1.5",
     "next": "14.2.16",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-fast-marquee": "^1.6.5"
   },
   "devDependencies": {
-    "@types/contentful-resolve-response": "^0.1.33",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "daisyui": "^4.12.14",
     "eslint": "^8",
     "eslint-config-next": "14.2.16",
     "postcss": "^8",
