@@ -46,7 +46,7 @@ export default async function DetailBlog({
   return (
     
     <Wrapper>
-      <div className="px-4 lg:px-0">
+      <div className="px-4 lg:px-0 mt-28">
         <div className="text-teal-500 font-semibold text-lg lg:text-xl">
           {blog.fields.category}
         </div>
