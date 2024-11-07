@@ -4,6 +4,7 @@ import { IBlogs } from "@/types/blog";
 import { documentToReactComponents, Options } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import Image from "next/image";
+import { title } from "process";
 
 const options: Options = {
     renderNode: {
@@ -21,6 +22,19 @@ export const generateStaticParams = async () => {
     slug: item.fields.slug,
   }));
 };
+
+export async function generateMetadata({params}: {params: {slug: string}}) {
+    const blog: IBlogs = await getBlogsSlug(params.slug)
+
+    return {
+        title: blog.fields.title,
+        description: blog.fields.title,
+        authors: blog.fields.author.fields.name,
+        openGraph: {
+            images: [`https:${blog.fields.thumbnail.fields.file.url}`]
+        }
+    }
+}
 
 export default async function DetailBlog({
   params,
