@@ -4,7 +4,6 @@ import { IBlogs } from "@/types/blog";
 import { documentToReactComponents, Options } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import Image from "next/image";
-import { title } from "process";
 
 const options: Options = {
     renderNode: {
