@@ -18,13 +18,13 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full top-0 z-10 transition-all duration-300 ${
-        isScrolled ? "bg-black text-white" : "bg-transparent text-black"
+      className={`fixed w-full p-4 top-0 z-10 transition-all duration-300 ${
+        isScrolled ? "bg-transparent backdrop-blur-md text-black" : "bg-transparent text-black"
       }`}
     >
       <div className="px-6 py-3 flex justify-between items-center">
         <div>
-          <Image src="/Blogger-logo.png" alt="logo" width={90} height={80} />
+          <Image src="/Blogger-logo.png" alt="logo" width={70} height={80} />
         </div>
 
         {/* Menu Items */}
