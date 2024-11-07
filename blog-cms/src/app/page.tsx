@@ -1,10 +1,13 @@
 import Content from "@/components/content";
-import { getBlogs } from "@/libs/blog";
-import { IBlog } from "@/types/blog";
+import Navbar from "@/components/navbar";
+import Wrapper from "@/components/wrapper";
 
 export default async function Home() {
   return (
     <div>
+      <Wrapper>
+      <></>
+      </Wrapper>
       <Content />
     </div>
   );

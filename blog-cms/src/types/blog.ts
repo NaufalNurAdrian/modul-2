@@ -1,4 +1,4 @@
-export interface IBlog {
+export interface IBlogs {
     fields: {
       title: string;
       slug: string;
