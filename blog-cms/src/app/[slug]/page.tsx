@@ -1,6 +1,7 @@
+import Recomendation from "@/components/recomendation";
 import Share from "@/components/share";
 import Wrapper from "@/components/wrapper";
-import { getBlogs, getBlogsSlug } from "@/libs/blog";
+import { getBlogs, getBlogsRecom, getBlogsSlug } from "@/libs/blog";
 import { IBlogs } from "@/types/blog";
 import {
   documentToReactComponents,
@@ -51,30 +52,40 @@ export default async function DetailBlog({
   params: { slug: string };
 }) {
   const blog: IBlogs = await getBlogsSlug(params.slug);
-  console.log(blog);
+  const blogNe: IBlogs[] = await getBlogsRecom(params.slug);
 
   return (
     <Wrapper>
-      <div className="flex max-sm:flex-col max-md:flex-col lg:flex-row w-full max-w-screen-lg px-4 lg:gap-40 md:gap-10 sm:gap-5">
-        <div className="mt-40">
+      <div className="flex flex-col lg:flex-row w-full max-w-screen-lg px-4 gap-16">
+        {/* Sidebar Kiri (Rekomendasi & Share) */}
+        <div className="flex flex-col w-full lg:w-[30%] mt-10 lg:mt-20 gap-8">
+          <div>
+            <h2 className="font-bold text-xl mb-4">Rekomendasi</h2>
+            <Recomendation blogs={blogNe} />
+          </div>
           <Share slug={blog.fields.slug} />
         </div>
 
-        <div className="px-4 lg:px-0 mt-28">
-          <div className="text-teal-500 font-semibold text-lg lg:text-xl">
+        {/* Konten Utama */}
+        <div className="flex-1 w-full lg:w-[70%] mt-10 lg:mt-20">
+          {/* Kategori */}
+          <div className="text-teal-500 font-semibold text-lg lg:text-xl mb-4">
             {blog.fields.category}
           </div>
 
-          <div className="flex justify-center font-bold text-2xl lg:text-3xl p-3 lg:p-5 text-center">
-            <h1>{blog.fields.title}</h1>
-          </div>
+          {/* Judul Artikel */}
+          <h1 className="font-bold text-2xl lg:text-3xl mb-5 text-center">
+            {blog.fields.title}
+          </h1>
 
-          <div className="text-gray-500 flex flex-col lg:flex-row items-center justify-between text-sm lg:text-base mb-4">
+          {/* Informasi Penulis */}
+          <div className="text-gray-500 flex flex-col lg:flex-row items-center justify-between text-sm lg:text-base mb-6">
             <div>{blog.fields.author.fields.name}</div>
-            <div className="py-2 lg:py-0">{blog.fields.date}</div>
+            <div className="py-1 lg:py-0">{blog.fields.date}</div>
           </div>
 
-          <div className="w-full lg:w-[800px] h-[400px] lg:h-[600px] relative mx-auto rounded-xl overflow-hidden mb-6">
+          {/* Gambar Artikel */}
+          <div className="w-full lg:w-[800px] h-[200px] sm:h-[300px] lg:h-[500px] relative mx-auto rounded-xl overflow-hidden mb-8">
             <Image
               src={`https:${blog.fields.thumbnail.fields.file.url}`}
               alt={blog.fields.title}
@@ -83,6 +94,7 @@ export default async function DetailBlog({
             />
           </div>
 
+          {/* Konten Artikel */}
           <div className="prose prose-sm lg:prose-lg max-w-none mx-auto">
             {documentToReactComponents(blog.fields.content, options)}
           </div>

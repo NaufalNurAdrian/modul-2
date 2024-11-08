@@ -23,3 +23,12 @@ export const getBlogsSlug = async (slug: string) => {
   const result = resolveResponse(data);
   return result[0];
 };
+export const getBlogsRecom = async (slug: string) => {
+  const res = await fetch(
+    `${base_url}/spaces/${spacesId}/environments/master/entries?access_token=${token}&content_type=blog&fields.slug[ne]=${slug}&limit=3`,
+    { next: { revalidate: 3600 } }
+  );
+  const data = await res.json();
+  const result = resolveResponse(data);
+  return result;  
+};
