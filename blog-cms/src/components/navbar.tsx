@@ -25,7 +25,7 @@ export default function Navbar() {
     <nav
       className={`fixed w-full p-4 top-0 z-10 transition-all duration-300 ${
         isScrolled
-          ? "bg-transparent backdrop-blur-md text-black"
+          ? "bg-transparent backdrop-blur-xl text-black"
           : "bg-transparent text-black"
       }`}
     >
@@ -33,7 +33,6 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center">
           <Image src="/Blogger-logo.png" alt="logo" width={60} height={60} />
-          <span className="ml-2 text-lg font-bold">Naufal Blog</span>
         </div>
 
         {/* Menu Hamburger (Mobile) */}
