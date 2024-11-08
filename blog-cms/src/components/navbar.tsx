@@ -6,6 +6,7 @@ import Image from "next/image";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,38 +17,58 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <nav
       className={`fixed w-full p-4 top-0 z-10 transition-all duration-300 ${
-        isScrolled ? "bg-transparent backdrop-blur-md text-black" : "bg-transparent text-black"
+        isScrolled
+          ? "bg-transparent backdrop-blur-md text-black"
+          : "bg-transparent text-black"
       }`}
     >
       <div className="px-6 py-3 flex justify-between items-center">
-        <div>
-          <Image src="/Blogger-logo.png" alt="logo" width={70} height={80} />
+        {/* Logo */}
+        <div className="flex items-center">
+          <Image src="/Blogger-logo.png" alt="logo" width={60} height={60} />
+          <span className="ml-2 text-lg font-bold">Naufal Blog</span>
+        </div>
+
+        {/* Menu Hamburger (Mobile) */}
+        <div className="lg:hidden flex items-center">
+          <button
+            onClick={toggleMenu}
+            className="focus:outline-none text-2xl"
+          >
+            {isMenuOpen ? "✖" : "☰"}
+          </button>
         </div>
 
         {/* Menu Items */}
-        <ul className="flex space-x-6">
+        <ul
+          className={`flex-col lg:flex-row lg:flex space-y-4 lg:space-y-0 lg:space-x-6 absolute lg:static bg-white lg:bg-transparent left-0 right-0 p-6 lg:p-0 ${
+            isMenuOpen ? "flex" : "hidden"
+          } lg:flex lg:items-center top-20 lg:top-auto`}
+        >
           <li>
-            <Link href="/" className="hover:text-gray-300">
+            <Link
+              href="/"
+              className="hover:text-gray-500 block text-center lg:text-left"
+            >
               Home
             </Link>
           </li>
           <li>
             <Link
               href="https://www.naufaladrian.my.id/"
-              className="hover:text-gray-300"
+              className="hover:text-gray-500 block text-center lg:text-left"
             >
               My Portfolio
             </Link>
           </li>
         </ul>
-
-        {/* Logo */}
-        <div className="flex items-center space-x-3">
-          <span className="text-xl font-bold">Naufal Blog</span>
-        </div>
       </div>
     </nav>
   );
