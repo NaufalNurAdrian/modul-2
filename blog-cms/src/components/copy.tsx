@@ -5,7 +5,7 @@ import { FaCheck, FaLink } from "react-icons/fa6";
 import { useCopyToClipboard } from "usehooks-ts";
 
 export default function CopyButton({ Link }: { Link: string }) {
-  const [_value, copy] = useCopyToClipboard();
+  const [, copy] = useCopyToClipboard();
   const [copied, setCopied] = useState<boolean>(false);
 
   return (
