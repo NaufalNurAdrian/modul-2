@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   description: "Berbagai informasi, berita, insights, hingga tips terbaru seputar dunia dan skill digital.",
   icons: {
-    icon: "/favicon.ico"
+    icon: "/favicone.ico"
   }
 };
 

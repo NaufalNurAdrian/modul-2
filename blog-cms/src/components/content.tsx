@@ -8,7 +8,7 @@ export default async function Content() {
   console.log(data[0].fields.thumbnail);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-5 sm:p-10 mt-28">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-5 sm:p-10 mt-28 gap-10">
       {data.map((item, idx) => {
         return (
           <Link

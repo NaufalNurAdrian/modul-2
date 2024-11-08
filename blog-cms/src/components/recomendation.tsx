@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Recomendation({ blogs }: { blogs: IBlogs[] }) {
   return (
-    <div className="flex w-[350px] flex-col gap-4">
+    <div className="flex w-[350px] flex-col gap-4 p-1">
       {blogs.map((item, idx) => (
         <div
           key={idx}
