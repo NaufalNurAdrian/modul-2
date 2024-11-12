@@ -56,7 +56,7 @@ export default async function DetailBlog({
 
   return (
     <Wrapper>
-      <div className="flex flex-col lg:flex-row w-full max-w-screen-lg px-4 gap-16">
+      <div className="flex flex-col lg:flex-row w-full max-w-screen-lg px-4 gap-16" >
         {/* Sidebar Kiri (Rekomendasi & Share) */}
         <div className="flex flex-col w-full lg:w-[30%] mt-20 lg:mt-20 gap-8">
           <div>

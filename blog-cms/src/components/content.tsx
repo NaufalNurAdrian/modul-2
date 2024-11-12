@@ -12,6 +12,7 @@ export default async function Content() {
       {data.map((item, idx) => {
         return (
           <Link
+          data-cy="blog-item"
             key={idx}
             href={`/${item.fields.slug}`}
             className="border shadow-lg rounded-xl overflow-hidden transform transition duration-300 hover:scale-105"

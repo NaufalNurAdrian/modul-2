@@ -16,8 +16,9 @@ export default function CopyButton({ Link }: { Link: string }) {
         setCopied(true);
       }}
       onMouseLeave={() => setCopied(false)}
+      daya-cy="copy-button"
     >
-        {copied ? <FaCheck/> : <FaLink/>}
+        {copied ? <FaCheck data-cy="check-icon"/> : <FaLink data-cy="link-icon"/>}
     </div>
   );
 }
