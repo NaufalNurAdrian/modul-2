@@ -10,7 +10,7 @@ export default function Carousel() {
   return (
     <Swiper
       modules={[Autoplay, Pagination]}
-      className="w-full h-[50vh] md:h-[75vh] lg:h-screen" // Mengatur tinggi responsif
+      className="w-screen h-[50vh] md:h-[75vh] lg:h-screen" // Mengatur tinggi responsif
       spaceBetween={0}
       slidesPerView={1}
       loop={true}

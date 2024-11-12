@@ -5,7 +5,7 @@ import Recomendation from "@/components/Recomendation";
 
 export default function Home() {
   return (
-    <div className="w-full">
+    <div>
       <Carousel />
       <div className="flex justify-center font-extrabold text-3xl mt-20">
         <h1>New Arrival</h1>
