@@ -3,12 +3,25 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import ButtonSingin from "./buttonSignin";
+import supabase from "@/services/supabase";
+import { User } from "@supabase/supabase-js";
+import Avatar from "./avatar";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [user, setUser] = useState<User | null>(null)
+  const getSession = () => {
+    supabase.auth.onAuthStateChange((event, session) => {
+        setUser(session?.user || null)
+        
+    })
+}
+
 
   useEffect(() => {
+    getSession()
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
@@ -67,6 +80,13 @@ export default function Navbar() {
               My Portfolio
             </Link>
           </li>
+          {
+            user ? <div><Avatar 
+            picture={user.user_metadata.picture}
+            full_name={user.user_metadata.name}
+            email={user.user_metadata.email}
+            /></div> : <ButtonSingin/>
+          }
         </ul>
       </div>
     </nav>

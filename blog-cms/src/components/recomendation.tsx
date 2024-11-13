@@ -1,11 +1,13 @@
 import { IBlogs } from "@/types/blog";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Recomendation({ blogs }: { blogs: IBlogs[] }) {
   return (
     <div className="flex w-[350px] flex-col gap-4 p-1">
       {blogs.map((item, idx) => (
-        <div
+        <Link
+        href={`/${item.fields.slug}`}
           key={idx}
           className="flex flex-col sm:flex-row w-full max-w-[500px] gap-4 mx-auto"
         >
@@ -30,7 +32,7 @@ export default function Recomendation({ blogs }: { blogs: IBlogs[] }) {
               <p>{item.fields.date}</p>
             </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
