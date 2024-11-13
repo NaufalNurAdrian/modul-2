@@ -39,6 +39,8 @@ export default function Testimonials() {
               <Image
                 src={testimonial.imgSrc}
                 alt={testimonial.name}
+                width={50}
+                height={50}
                 className="w-24 h-24 rounded-full mb-4"
               />
               <h4 className="text-2xl font-semibold">{testimonial.name}</h4>
