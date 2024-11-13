@@ -9,6 +9,7 @@ export default function Navbar() {
           <Image src="/favicon.png"
           alt="logo" 
           width={50} height={50} 
+          quality={40}
           priority
           />
         </Link>

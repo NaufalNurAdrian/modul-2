@@ -42,7 +42,7 @@ const TeamsPage = async () => {
   const users: User[] = await fetchUsers(6);
 
   return (
-    <section className="py-12 bg-slate-100 text-black mt-20">
+    <section className="py-12 bg-slate-100 text-black mt-20 h-[75vh]">
       <div className="max-w-6xl mx-auto px-4">
         <h1 className="text-3xl lg:text-4xl font-bold text-center mb-8">
           Meet Our Team
@@ -59,6 +59,7 @@ const TeamsPage = async () => {
                   alt={`${user.name.first} ${user.name.last}`}
                   width={120}
                   height={120}
+                  quality={50}
                   loading={idx === 0 ? "eager" : "lazy"}
                   className="rounded-full"
                 />
