@@ -57,8 +57,8 @@ export default async function Hero() {
   const data: IProduct[] = await getProduct();
 
   return (
-    <div>
-      <section className="flex flex-col justify-center items-center bg-slate-100 py-8 text-black">
+    <div className="text-black">
+      <section className="flex flex-col h-screen justify-center items-center bg-slate-100 py-8 text-black">
         <header className="w-full max-w-5xl px-4 py-2">
           <div className="text-xl font-semibold text-center">Empowering Tomorrow</div>
         </header>
@@ -70,8 +70,8 @@ export default async function Hero() {
         </div>
       </section>
 
-      <section className="py-8 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
+      <section className="flex py-8 bg-slate-100 h-[60vh]">
+        <div className="flex flex-col justify-center max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">Our Services</h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, index) => (
@@ -87,7 +87,7 @@ export default async function Hero() {
       <Ceo />
       <History />
 
-      <section className="py-12 bg-slate-50">
+      <section className="py-12 bg-slate-100">
         <div className="max-w-6xl mx-auto px-4">
           <h1 className="text-3xl lg:text-4xl font-bold text-center mb-8">
             Our Products
