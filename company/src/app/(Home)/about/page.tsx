@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -41,7 +42,7 @@ const AboutUs: React.FC = () => {
         <div className="mb-16">
           <h3 className="text-4xl font-semibold mb-6">Our Journey</h3>
           <p className="text-lg leading-relaxed text-gray-700">
-            Didirikan pada tahun <strong>2010</strong>, Naufal Technology's
+            Didirikan pada tahun <strong>2010</strong>, Naufal Technology
             telah berkembang menjadi salah satu perusahaan terkemuka di dunia
             yang bergerak di bidang teknologi. Kami memulai dengan fokus pada
             pengembangan jaringan yang handal dan kini merambah ke Artificial
@@ -113,7 +114,7 @@ const AboutUs: React.FC = () => {
         <div className="mb-16">
           <h3 className="text-4xl font-semibold mb-6">Our Achievements</h3>
           <p className="text-lg leading-relaxed text-gray-700">
-            Naufal Technology's telah mendapatkan berbagai penghargaan atas
+            Naufal Technology telah mendapatkan berbagai penghargaan atas
             inovasi kami. Beberapa pencapaian penting meliputi:
           </p>
           <ul className="list-disc list-inside pl-5 mt-4 space-y-2 text-lg text-gray-700">
@@ -161,7 +162,7 @@ const AboutUs: React.FC = () => {
                 key={index}
                 className="flex flex-col items-center p-8 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow"
               >
-                <img
+                <Image
                   src={member.imgSrc}
                   alt={member.name}
                   className="w-32 h-32 rounded-full mb-4 object-cover border-2 border-blue-600"
@@ -180,7 +181,7 @@ const AboutUs: React.FC = () => {
             Join Us in Shaping the Future
           </h3>
           <p className="text-lg leading-relaxed text-gray-700 mb-8">
-            Bersama Naufal Technology's, mari kita ciptakan masa depan yang
+            Bersama Naufal Technology, mari kita ciptakan masa depan yang
             lebih terhubung, aman, dan cerdas. Bergabunglah dengan kami dan
             rasakan dampak inovasi kami.
           </p>

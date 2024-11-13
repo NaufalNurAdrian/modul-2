@@ -1,8 +1,10 @@
+import Image from "next/image";
+
 export default function Ceo() {
   return (
     <div className="hero bg-slate-100 text-black min-h-[70vh]">
       <div className="hero-content flex-col lg:flex-row">
-        <img
+        <Image
           src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
           alt="CEO Naufal Nur Adrian"
           className="max-w-sm rounded-lg shadow-2xl"
@@ -15,7 +17,7 @@ export default function Ceo() {
             teknologi dengan pengalaman lebih dari 15 tahun dalam pengembangan
             sistem dan inovasi digital. Keahliannya mencakup Artificial
             Intelligence (AI), pengembangan jaringan, dan manufaktur chip
-            berteknologi tinggi. Di bawah kepemimpinannya, Naufal Technology's
+            berteknologi tinggi. Di bawah kepemimpinannya, Naufal Technology
             berhasil meraih berbagai penghargaan global atas inovasi yang
             mengubah dunia teknologi. Komitmennya untuk membawa solusi inovatif
             dan menginspirasi tim telah menjadikan perusahaan sebagai salah satu

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const testimonials = [
@@ -35,7 +36,7 @@ export default function Testimonials() {
               key={index}
               className="flex flex-col items-center p-8 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow"
             >
-              <img
+              <Image
                 src={testimonial.imgSrc}
                 alt={testimonial.name}
                 className="w-24 h-24 rounded-full mb-4"
@@ -43,7 +44,7 @@ export default function Testimonials() {
               <h4 className="text-2xl font-semibold">{testimonial.name}</h4>
               <p className="text-blue-600">{testimonial.title}</p>
               <p className="text-gray-700 text-center mt-4 italic">
-                "{testimonial.feedback}"
+                {testimonial.feedback}
               </p>
             </div>
           ))}

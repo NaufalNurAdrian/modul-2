@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="flex flex-col items-start">
           <h2 className="text-xl md:text-2xl font-semibold mb-2">
-            Naufal Technology's
+            Naufal Technology
           </h2>
           <p className="text-sm md:text-base text-gray-400">
             Empowering Tomorrow with Cutting-Edge Technology.
@@ -75,7 +75,7 @@ export default function Footer() {
       </div>
 
       <div className="text-center text-gray-500 mt-8">
-        © {new Date().getFullYear()} Naufal Technology's. All rights reserved.
+        © {new Date().getFullYear()} Naufal Technology. All rights reserved.
       </div>
     </footer>
   );

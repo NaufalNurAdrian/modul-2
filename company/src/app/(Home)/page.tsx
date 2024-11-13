@@ -66,7 +66,7 @@ export default async function Hero() {
 
         <div className="text-center">
           <h1 className="text-4xl md:text-8xl font-bold mb-4">
-            Naufal Technology's
+            Naufal Technology
           </h1>
           <p className="text-lg md:text-2xl">With Cutting-Edge Technology</p>
         </div>
