@@ -1,7 +1,7 @@
 import { Document } from "@contentful/rich-text-types";
 
 export interface IBlogs {
-    id: any;
+    id: string;
     fields: {
       title: string;
       slug: string;
