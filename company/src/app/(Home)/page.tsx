@@ -45,8 +45,7 @@ export default async function Hero() {
     },
     {
       title: "Artificial Intelligence (AI)",
-      description:
-        "Solusi AI yang dapat diintegrasikan untuk berbagai sektor.",
+      description: "Solusi AI yang dapat diintegrasikan untuk berbagai sektor.",
     },
     {
       title: "Manufaktur Chip",
@@ -54,24 +53,30 @@ export default async function Hero() {
         "Chip berkinerja tinggi untuk perangkat elektronik masa depan.",
     },
   ];
+
   const data: IProduct[] = await getProduct();
 
   return (
     <div className="text-black">
-      <section className="flex flex-col h-screen justify-center items-center bg-slate-100 py-8 text-black">
-        <header className="w-full max-w-5xl px-4 py-2">
-          <div className="text-xl font-semibold text-center">Empowering Tomorrow</div>
+      <section
+        className="flex flex-col min-h-[80vh] justify-center items-center bg-slate-100 py-8 text-black"
+        style={{ contentVisibility: "auto", containIntrinsicSize: "1000px" }}
+      >
+        <header className="w-full max-w-4xl px-4 py-2 mx-auto">
+          <div className="text-xl font-medium text-center">
+            Empowering Tomorrow
+          </div>
         </header>
         <div className="text-center">
-          <h1 className="text-3xl md:text-5xl font-bold mb-2">
+          <h1 className="text-2xl md:text-4xl font-medium mb-2">
             Naufal Technology
           </h1>
-          <p className="text-md md:text-xl">With Cutting-Edge Technology</p>
+          <p className="text-md md:text-lg">With Cutting-Edge Technology</p>
         </div>
       </section>
 
       <section className="flex py-8 bg-slate-100 h-[60vh]">
-        <div className="flex flex-col justify-center max-w-6xl mx-auto px-4">
+        <div className="flex flex-col justify-center max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">Our Services</h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, index) => (
@@ -107,10 +112,13 @@ export default async function Hero() {
                     width={320}
                     height={200}
                     loading={idx === 0 ? "eager" : "lazy"}
+                    priority={idx === 0}
                     className="object-cover"
                   />
                 </div>
-                <h2 className="text-lg font-semibold text-center">{item.fields.title}</h2>
+                <h2 className="text-lg font-semibold text-center">
+                  {item.fields.title}
+                </h2>
               </Link>
             ))}
           </div>
