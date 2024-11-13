@@ -7,7 +7,7 @@ const token = process.env.CONTENTFUL_TOKEN;
 export const getVideo = async () => {
   const res = await fetch(
     `${base_url}/spaces/${spacesId}/environments/master/entries?access_token=${token}&content_type=companyProfile`,
-    { next: { revalidate: 60 } }
+    { next: { revalidate: 3600 } }
   );
   const data = await res.json();
   const result = resolveResponse(data);
@@ -16,7 +16,7 @@ export const getVideo = async () => {
 export const getProduct = async () => {
   const res = await fetch(
     `${base_url}/spaces/${spacesId}/environments/master/entries?access_token=${token}&content_type=product`,
-    { next: { revalidate: 60 } }
+    { next: { revalidate: 3600 } }
   );
   const data = await res.json();
   const result = resolveResponse(data);
@@ -25,7 +25,7 @@ export const getProduct = async () => {
 export const getProductSlug = async (slug: string) => {
   const res = await fetch(
     `${base_url}/spaces/${spacesId}/environments/master/entries?access_token=${token}&content_type=product&fields.slug=${slug}`,
-    { next: { revalidate: 60 } }
+    { next: { revalidate: 3600 } }
   );
   const data = await res.json();
   const result = resolveResponse(data);

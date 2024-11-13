@@ -3,21 +3,6 @@ import { IProduct } from "@/types/Product";
 import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-const extractPlainText = (document: any): string => {
-  let text = "";
-
-  const traverseNode = (node: any) => {
-    if (node.nodeType === 3) {
-      text += node.value;
-    } else if (node.content) {
-      node.content.forEach(traverseNode);
-    }
-  };
-
-  traverseNode(document);
-  return text.trim();
-};
-
 export async function generateMetadata({
   params,
 }: {
@@ -28,15 +13,14 @@ export async function generateMetadata({
   const { title, price, description, thumbnail } = product.fields;
   const imageUrl = `https:${thumbnail.fields.file.url}`;
 
-  const plainTextDescription = extractPlainText(description);
 
   return {
     title: `${title} | Naufal Technology's`,
-    description: plainTextDescription ? plainTextDescription.slice(0, 150) + "..." : title,
+    description: product.fields.description,
     keywords: `${title}, ${price}, AI, technology, product, innovation, chip manufacturing, networking`,
     openGraph: {
       title: `${title} - Naufal Technology's`,
-      description: plainTextDescription ? plainTextDescription.slice(0, 150) + "..." : title,
+      description: product.fields.description,
       url: `https://naufal-technology.vercel.app/products/${params.slug}`,
       type: "product",
       images: [
@@ -51,7 +35,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: `${title} - Naufal Technology's`,
-      description: plainTextDescription ? plainTextDescription.slice(0, 150) + "..." : title,
+      description: product.fields.description,
       images: [imageUrl],
     },
   };
