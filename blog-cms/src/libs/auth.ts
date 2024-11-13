@@ -14,10 +14,3 @@ export const singInWithGoogle = async () => {
     console.error("error during Google sign-in", error.message);
   }
 };
-
-export const getSession = () => {
-    supabase.auth.onAuthStateChange((event, session) => {
-        console.log(event, session);
-        
-    })
-}
