@@ -1,6 +1,43 @@
+import Ceo from "@/components/ceo";
+import History from "@/components/history";
+import Testimonial from "@/components/testimonials";
 import Video from "@/components/video";
+import { getProduct } from "@/libs/contentful";
+import { IProduct } from "@/types/Product";
+import Image from "next/image";
+import Link from "next/link";
 
-export default function Hero() {
+export const metadata = {
+  title: "AI, Chip Manufacturing, and Networking Solutions",
+  description:
+    "Naufal Technology's menyediakan solusi terbaik dalam Artificial Intelligence, manufaktur chip berkinerja tinggi, dan jaringan bisnis untuk membantu perusahaan Anda mencapai efisiensi maksimal.",
+  keywords:
+    "AI, artificial intelligence, chip manufacturing, networking, Naufal Technology's, solusi teknologi, manufaktur chip, solusi AI, bisnis jaringan",
+  openGraph: {
+    title: "Empowering Tomorrow with AI and Networking",
+    description:
+      "Solusi AI, manufaktur chip, dan jaringan dari Naufal Technology's membantu Anda mengoptimalkan kinerja bisnis dengan teknologi terdepan.",
+    url: "https://naufal-technology.vercel.app/",
+    type: "website",
+    images: [
+      {
+        url: "/ntech.png",
+        width: 800,
+        height: 600,
+        alt: "Naufal Technology's Hero Image",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI and Networking Solutions",
+    description:
+      "Naufal Technology's menyediakan solusi inovatif dalam AI, manufaktur chip, dan jaringan bisnis.",
+    images: ["/ntech.png"],
+  },
+};
+
+export default async function Hero() {
   const services = [
     {
       title: "Networking",
@@ -18,9 +55,10 @@ export default function Hero() {
         "Mengembangkan chip berkinerja tinggi untuk mendukung perangkat elektronik masa depan.",
     },
   ];
+  const data: IProduct[] = await getProduct();
 
   return (
-    <div >
+    <div>
       <section className="min-h-screen flex flex-col justify-center items-center bg-slate-100 text-black">
         <header className="flex justify-center w-full max-w-6xl px-8 py-4">
           <div className="text-xl font-semibold">Empowering Tomorrow</div>
@@ -37,31 +75,53 @@ export default function Hero() {
         <Video />
       </div>
       <section
-  id="services"
-  className="py-16 bg-slate-100 h-screen flex items-center text-black"
->
-  <div className="max-w-6xl mx-auto px-4">
-    <h2 className="text-4xl font-bold mb-12 text-center">Our Services</h2>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {services.map((service, index) => (
-        <div key={index} className="p-6 bg-slate-200 rounded-lg">
-          <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-          <p className="text-sm mb-6">{service.description}</p>
-          
-          {/* Button dengan animasi saat di-hover */}
-          <div className="flex justify-center">
-            <button
-              className="z-10 relative inline-flex items-center justify-center px-6 py-2.5 font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 hover:shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out group"
-            >
-              <span className="absolute inset-0 bg-blue-500 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></span>
-              <span className="relative">Learn More</span>
-            </button>
+        id="services"
+        className="py-16 bg-slate-100 h-[60vh] flex items-center text-black"
+      >
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-4xl font-bold mb-12 text-center">Our Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div key={index} className="p-6 bg-slate-200 rounded-lg">
+                <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
+                <p className="text-sm mb-6">{service.description}</p>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
+      <Ceo />
+      <History />
+      <section className="min-h-[70vh] bg-gradient-to-b from-slate-100 to-slate-100 py-16">
+        <div className="container mx-auto px-6 lg:px-12 mt-10">
+          <h1 className="text-4xl lg:text-5xl font-bold text-center text-black mb-12">
+            Our Products
+          </h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+            {data.map((item, idx) => (
+              <Link
+                href={`/product/${item.fields.slug}`}
+                key={idx}
+                className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 hover:shadow-xl transition-transform transform hover:scale-105 flex flex-col items-center"
+              >
+                <div className="w-full h-[200px] mb-6 overflow-hidden rounded-xl">
+                  <Image
+                    src={`https:${item.fields.thumbnail.fields.file.url}`}
+                    alt={item.fields.title}
+                    width={320}
+                    height={200}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <h2 className="text-xl font-semibold text-gray-800 text-center">
+                  {item.fields.title}
+                </h2>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+      <Testimonial />
     </div>
   );
 }

@@ -1,4 +1,3 @@
-// types/video.ts
 export interface IVideo {
     fields: {
         title: string;
@@ -11,4 +10,3 @@ export interface IVideo {
         };
     };
 }
-

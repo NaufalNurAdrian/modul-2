@@ -6,19 +6,17 @@ import Image from "next/image";
 export default function Loading() {
   const [isVisible, setIsVisible] = useState(true);
 
-  // Menyembunyikan loading setelah beberapa waktu
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 1000); // Loading akan hilang setelah 3 detik
+    }, 3000);
     return () => clearTimeout(timer);
   }, []);
 
-  // Jika tidak visible, sembunyikan komponen
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-slate-100 z-50">
       <div className="flex flex-col items-center gap-4">
         <Image
           src="/favicon.png"

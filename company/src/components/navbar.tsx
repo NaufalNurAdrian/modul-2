@@ -10,6 +10,7 @@ export default function Navbar() {
         </Link>
       </div>
       <div className="flex self-center gap-4 ">
+        <Link href="/">Home</Link>
         <Link href="/product">Product</Link>
         <Link href="/about">Abous Us</Link>
         <Link href="/teams">Teams</Link>
