@@ -10,7 +10,7 @@ export async function generateMetadata({
 }) {
   const product: IProduct = await getProductSlug(params.slug);
 
-  const { title, price, description, thumbnail } = product.fields;
+  const { title, price, thumbnail } = product.fields;
   const imageUrl = `https:${thumbnail.fields.file.url}`;
 
 
