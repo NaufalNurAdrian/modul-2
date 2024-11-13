@@ -55,6 +55,7 @@ const TeamsPage = async () => {
                   alt={`${user.name.first} ${user.name.last}`}
                   width={150}
                   height={150}
+                  priority
                   className="rounded-full shadow-md"
                 />
               </div>

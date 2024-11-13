@@ -6,7 +6,11 @@ export default function Navbar() {
     <div className="flex justify-between flex-row z-50 top-0 fixed bg-white text-black font-semibold items-center w-full h-20 p-4">
       <div className="flex justify-start">
         <Link href="/">
-          <Image src="/favicon.png" alt="logo" width={50} height={50} />
+          <Image src="/favicon.png"
+          alt="logo" 
+          width={50} height={50} 
+          priority
+          />
         </Link>
       </div>
       <div className="flex self-center gap-4 ">

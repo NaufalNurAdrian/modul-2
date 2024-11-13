@@ -165,6 +165,7 @@ const AboutUs: React.FC = () => {
                 <Image
                   src={member.imgSrc}
                   alt={member.name}
+                  priority
                   className="w-32 h-32 rounded-full mb-4 object-cover border-2 border-blue-600"
                 />
                 <h4 className="text-2xl font-semibold">{member.name}</h4>
