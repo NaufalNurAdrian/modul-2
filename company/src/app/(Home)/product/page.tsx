@@ -7,11 +7,14 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Innovative AI and Technology Products",
-  description: "Explore Naufal Technology's cutting-edge products designed to revolutionize industries with AI, networking, and tech innovation. Discover smart solutions and devices.",
-  keywords: "AI technology, innovative products, smart devices, networking, chip manufacturing, tech solutions, Naufal Technology, advanced technology products",
+  description:
+    "Explore Naufal Technology's cutting-edge products designed to revolutionize industries with AI, networking, and tech innovation.",
+  keywords:
+    "AI technology, innovative products, smart devices, networking, tech solutions, Naufal Technology",
   openGraph: {
     title: "Innovative AI and Technology Products",
-    description: "Explore Naufal Technology's cutting-edge products designed to revolutionize industries with AI, networking, and tech innovation. Discover smart solutions and devices.",
+    description:
+      "Explore Naufal Technology's cutting-edge products designed to revolutionize industries with AI, networking, and tech innovation.",
     url: "https://naufal-technology.vercel.app/product",
     type: "website",
     images: [
@@ -26,7 +29,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Innovative AI and Technology Products",
-    description: "Explore Naufal Technology's cutting-edge products designed to revolutionize industries with AI, networking, and tech innovation.",
+    description:
+      "Explore Naufal Technology's cutting-edge products designed to revolutionize industries with AI and tech innovation.",
     images: ["/product.png"],
   },
 };
@@ -35,20 +39,20 @@ export default async function Product() {
   const data: IProduct[] = await getProduct();
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-slate-100 to-slate-100 py-16">
-      <div className="container mx-auto px-6 lg:px-12 mt-10">
-        <h1 className="text-4xl lg:text-5xl font-bold text-center text-black mb-12">
+    <section className="min-h-screen bg-slate-100 text-black mt-20 py-8">
+      <div className="max-w-6xl mx-auto px-4">
+        <h1 className="text-3xl font-bold text-center mb-8">
           Our Products
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {data.map((item, idx) => (
             <Link
               href={`/product/${item.fields.slug}`}
               key={idx}
-              className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 hover:shadow-xl transition-transform transform hover:scale-105 flex flex-col items-center"
+              className="rounded-lg p-4 hover:bg-gray-100 transition-colors"
               prefetch={false}
             >
-              <div className="w-full h-[200px] mb-6 overflow-hidden rounded-xl">
+              <div className="aspect-w-4 aspect-h-3 mb-4 overflow-hidden rounded-lg">
                 <Image
                   src={`https:${item.fields.thumbnail.fields.file.url}?fm=webp&fit=fill&w=320&h=200`}
                   alt={item.fields.title}
@@ -57,18 +61,18 @@ export default async function Product() {
                   quality={80}
                   priority={idx === 0}
                   loading={idx === 0 ? "eager" : "lazy"}
-                  className="object-cover w-full h-full"
+                  className="object-cover"
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                 />
               </div>
-              <h2 className="text-xl font-semibold text-gray-800 text-center">
+              <h2 className="text-lg font-semibold text-center">
                 {item.fields.title}
               </h2>
             </Link>
           ))}
         </div>
       </div>
-      <div className="mt-16">
+      <div className="mt-12">
         <Testimonial />
       </div>
     </section>
