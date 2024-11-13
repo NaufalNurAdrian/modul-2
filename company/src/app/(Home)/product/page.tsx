@@ -43,6 +43,7 @@ export default async function Product() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {data.map((item, idx) => (
             <Link
+              rel="preload"
               href={`/product/${item.fields.slug}`}
               key={idx}
               className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 hover:shadow-xl transition-transform transform hover:scale-105 flex flex-col items-center"
@@ -53,6 +54,7 @@ export default async function Product() {
                   alt={item.fields.title}
                   width={320}
                   height={200}
+                  priority
                   className="object-cover w-full h-full"
                 />
               </div>

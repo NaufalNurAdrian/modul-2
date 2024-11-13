@@ -57,6 +57,7 @@ export default async function DetailProduct({
             alt={product.fields.title}
             width={300}
             height={300}
+            priority
             className="rounded-lg"
           />
         </div>
