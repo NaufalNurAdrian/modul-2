@@ -1,4 +1,5 @@
 import Ceo from "@/components/ceo";
+import Hero from "@/components/hero";
 import History from "@/components/history";
 import Services from "@/components/services";
 import Testimonial from "@/components/testimonials";
@@ -38,23 +39,13 @@ export const metadata = {
   },
 };
 
-export default async function Hero() {
+export default async function Home() {
 
   const data: IProduct[] = await getProduct();
 
   return (
     <div className="text-black">
-<div className="relative w-full h-[45vh] mt-16 md:h-screen sm:h-[60vh]">
-  <Image
-    src="/ntech.png"
-    alt="hero"
-    fill
-    className="object-cover"
-    priority
-  />
-</div>
-
-
+      <Hero />
       <Video />
       <Services />
       <Ceo />
