@@ -48,7 +48,7 @@ export default async function DetailProduct({
   const product: IProduct = await getProductSlug(params.slug);
 
   return (
-    <div className="h-screen flex flex-col text-xl bg-slate-100 text-black gap-8">
+    <div className="h-full flex flex-col text-xl bg-slate-100 text-black pb-10 gap-8">
       <div className="flex flex-row gap-5 mx-10 md:mx-40 mt-32">
         <div>
           <Image
