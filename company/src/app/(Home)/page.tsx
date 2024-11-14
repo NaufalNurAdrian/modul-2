@@ -44,22 +44,16 @@ export default async function Hero() {
 
   return (
     <div className="text-black">
-      <section
-        className="flex flex-col min-h-[80vh] justify-center items-center bg-slate-100 py-8 text-black"
-        style={{ contentVisibility: "auto", containIntrinsicSize: "1000px" }}
-      >
-        <header className="w-full max-w-4xl px-4 py-2 mx-auto">
-          <div className="text-xl font-medium text-center">
-            Empowering Tomorrow
-          </div>
-        </header>
-        <div className="text-center">
-          <h1 className="text-2xl md:text-4xl font-medium mb-2">
-            Naufal Technology
-          </h1>
-          <p className="text-md md:text-lg">With Cutting-Edge Technology</p>
-        </div>
-      </section>
+<div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] mt-16">
+  <Image
+    src="/ntech.png"
+    alt="hero"
+    fill
+    className="object-cover" 
+    priority 
+  />
+</div>
+
       <Video />
       <Services />
       <Ceo />

@@ -25,7 +25,7 @@ export default function Services() {
       );
     
     return(
-        <section className="flex py-8 bg-slate-100 h-[60vh]">
+        <section className="flex bg-slate-100">
         <div className="flex flex-col justify-center max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">Our Services</h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

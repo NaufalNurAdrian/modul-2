@@ -1,40 +1,32 @@
+'use client';
+
 import { getVideo } from "@/libs/contentful";
 import { IVideo } from "@/types/video";
+import { useEffect, useState } from "react";
 
-export default async function Video() {
-  const data: IVideo[] = await getVideo();
+export default function Video() {
+  const [data, setData] = useState<IVideo[]>([]);
 
-  if (!data || data.length === 0) {
-    return (
-      <div className="p-20 bg-slate-100 text-center">
-        <p className="text-gray-500">Video tidak tersedia saat ini.</p>
-      </div>
-    );
-  }
+  useEffect(() => {
+    const fetchData = async () => {
+      const videos = await getVideo();
+      setData(videos);
+    };
+    fetchData();
+  }, []);
 
   return (
-    <div className="p-8 sm:p-12 bg-slate-100">
+    <div className="p-20 bg-slate-100">
       {data.map((item, idx) => {
-        const videoUrl = item.fields.introduction?.fields?.file?.url;
-        if (!videoUrl) {
-          return (
-            <p key={idx} className="text-center text-red-500">
-              URL video tidak valid.
-            </p>
-          );
-        }
-
         return (
-          <div key={idx} className="mb-8">
+          <div key={idx}>
             <video
-              src={`https:${videoUrl}`}
+              src={`https:${item.fields.introduction.fields.file.url}`}
               muted={false}
               controls
-              onError={() =>
-                console.error(`Gagal memuat video: ${videoUrl}`)
-              }
               preload="metadata"
-              className="video-player w-full max-w-4xl mx-auto rounded-xl shadow-lg"
+              className="video-player w-full rounded-xl"
+              onError={() => console.error("Video failed to load")}
             />
           </div>
         );
