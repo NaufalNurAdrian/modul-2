@@ -1,6 +1,8 @@
 import Ceo from "@/components/ceo";
 import History from "@/components/history";
+import Services from "@/components/services";
 import Testimonial from "@/components/testimonials";
+import Video from "@/components/video";
 import { getProduct } from "@/libs/contentful";
 import { IProduct } from "@/types/Product";
 import Image from "next/image";
@@ -37,22 +39,6 @@ export const metadata = {
 };
 
 export default async function Hero() {
-  const services = [
-    {
-      title: "Networking",
-      description:
-        "Solusi jaringan yang handal dan efisien untuk meningkatkan performa bisnis.",
-    },
-    {
-      title: "Artificial Intelligence (AI)",
-      description: "Solusi AI yang dapat diintegrasikan untuk berbagai sektor.",
-    },
-    {
-      title: "Manufaktur Chip",
-      description:
-        "Chip berkinerja tinggi untuk perangkat elektronik masa depan.",
-    },
-  ];
 
   const data: IProduct[] = await getProduct();
 
@@ -74,24 +60,10 @@ export default async function Hero() {
           <p className="text-md md:text-lg">With Cutting-Edge Technology</p>
         </div>
       </section>
-
-      <section className="flex py-8 bg-slate-100 h-[60vh]">
-        <div className="flex flex-col justify-center max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">Our Services</h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, index) => (
-              <div key={index} className="bg-slate-200 rounded-lg p-4">
-                <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
-                <p className="text-sm">{service.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      <Video />
+      <Services />
       <Ceo />
       <History />
-
       <section className="py-12 bg-slate-100">
         <div className="max-w-6xl mx-auto px-4">
           <h1 className="text-3xl lg:text-4xl font-bold text-center mb-8">
@@ -124,7 +96,6 @@ export default async function Hero() {
           </div>
         </div>
       </section>
-
       <Testimonial />
     </div>
   );
