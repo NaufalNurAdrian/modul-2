@@ -44,15 +44,16 @@ export default async function Hero() {
 
   return (
     <div className="text-black">
-<div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] mt-16">
+<div className="relative w-full h-[45vh] mt-16 md:h-screen sm:h-[60vh]">
   <Image
     src="/ntech.png"
     alt="hero"
     fill
-    className="object-cover" 
-    priority 
+    className="object-cover"
+    priority
   />
 </div>
+
 
       <Video />
       <Services />

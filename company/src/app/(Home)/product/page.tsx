@@ -39,7 +39,7 @@ export default async function Product() {
   const data: IProduct[] = await getProduct();
 
   return (
-    <section className="min-h-screen bg-slate-100 text-black mt-20 py-8">
+    <section className="min-h-screen bg-slate-100 text-black mt-16 py-8">
       <div className="max-w-6xl mx-auto px-4">
         <h1 className="text-3xl font-bold text-center mb-8">
           Our Products
