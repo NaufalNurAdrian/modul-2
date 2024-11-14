@@ -42,154 +42,95 @@ const AboutUs: React.FC = () => {
         <div className="mb-16">
           <h3 className="text-4xl font-semibold mb-6">Our Journey</h3>
           <p className="text-lg leading-relaxed text-gray-700">
-            Didirikan pada tahun <strong>2010</strong>, Naufal Technology
-            telah berkembang menjadi salah satu perusahaan terkemuka di dunia
-            yang bergerak di bidang teknologi. Kami memulai dengan fokus pada
-            pengembangan jaringan yang handal dan kini merambah ke Artificial
-            Intelligence (AI) serta manufaktur chip berteknologi tinggi.
+            Didirikan pada tahun <strong>2010</strong>, Naufal Technology telah berkembang menjadi salah satu perusahaan terkemuka di dunia yang bergerak di bidang teknologi.
           </p>
           <p className="text-lg leading-relaxed text-gray-700 mt-4">
-            Di awal tahun 2000-an, kami membentuk tim penelitian AI yang
-            berdedikasi. Investasi ini mengukuhkan posisi kami sebagai pemimpin
-            dalam solusi AI yang inovatif, yang kini digunakan untuk
-            transformasi digital di berbagai sektor industri.
+            Di awal tahun 2000-an, kami membentuk tim penelitian AI yang berdedikasi, mengukuhkan posisi kami sebagai pemimpin dalam solusi AI yang inovatif.
           </p>
         </div>
 
         <div className="mb-16">
           <h3 className="text-4xl font-semibold mb-6">Our Vision & Mission</h3>
           <p className="text-lg leading-relaxed text-gray-700">
-            <strong>Visi Kami:</strong> Menjadi pemimpin global dalam industri
-            teknologi dengan menyediakan solusi inovatif yang menghubungkan
-            dunia, mengubah data menjadi wawasan yang bermakna, dan mempercepat
-            perkembangan perangkat elektronik.
+            <strong>Visi Kami:</strong> Menjadi pemimpin global dalam industri teknologi dengan solusi inovatif.
           </p>
           <p className="text-lg leading-relaxed text-gray-700 mt-4">
             <strong>Misi Kami:</strong>
           </p>
           <ul className="list-disc list-inside pl-5 space-y-2 text-lg text-gray-700">
-            <li>
-              Menghadirkan solusi jaringan yang andal untuk bisnis global.
-            </li>
-            <li>
-              Mendorong transformasi digital melalui teknologi AI yang inovatif.
-            </li>
-            <li>
-              Merancang chip berperforma tinggi untuk aplikasi masa depan.
-            </li>
+            <li>Menghadirkan solusi jaringan yang andal.</li>
+            <li>Transformasi digital melalui teknologi AI.</li>
+            <li>Merancang chip berperforma tinggi.</li>
           </ul>
         </div>
 
         <div className="mb-16">
           <h3 className="text-4xl font-semibold mb-6">Our Expertise</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {[
-              {
-                title: "Networking",
-                description:
-                  "Kami menyediakan solusi jaringan yang andal untuk bisnis dengan fokus pada infrastruktur, keamanan siber, dan sistem komunikasi.",
-              },
-              {
-                title: "Artificial Intelligence (AI)",
-                description:
-                  "Kami mengembangkan solusi AI yang canggih, mulai dari machine learning hingga natural language processing, untuk mendorong inovasi.",
-              },
-              {
-                title: "Chip Manufacturing",
-                description:
-                  "Kami merancang chip berteknologi tinggi yang digunakan dalam perangkat AI, IoT, dan infrastruktur jaringan.",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="p-8 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow"
-              >
-                <h4 className="text-2xl font-semibold mb-4">{item.title}</h4>
-                <p className="text-gray-700">{item.description}</p>
-              </div>
-            ))}
+            <div className="p-8 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+              <h4 className="text-2xl font-semibold mb-4">Networking</h4>
+              <p className="text-gray-700">
+                Solusi jaringan yang andal dengan fokus pada infrastruktur dan keamanan siber.
+              </p>
+            </div>
+            <div className="p-8 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+              <h4 className="text-2xl font-semibold mb-4">Artificial Intelligence (AI)</h4>
+              <p className="text-gray-700">
+                Solusi AI canggih, mulai dari machine learning hingga natural language processing.
+              </p>
+            </div>
+            <div className="p-8 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+              <h4 className="text-2xl font-semibold mb-4">Chip Manufacturing</h4>
+              <p className="text-gray-700">
+                Merancang chip berteknologi tinggi untuk perangkat AI dan IoT.
+              </p>
+            </div>
           </div>
         </div>
 
         <div className="mb-16">
           <h3 className="text-4xl font-semibold mb-6">Our Achievements</h3>
-          <p className="text-lg leading-relaxed text-gray-700">
-            Naufal Technology telah mendapatkan berbagai penghargaan atas
-            inovasi kami. Beberapa pencapaian penting meliputi:
-          </p>
-          <ul className="list-disc list-inside pl-5 mt-4 space-y-2 text-lg text-gray-700">
+          <ul className="list-disc list-inside pl-5 space-y-2 text-lg text-gray-700">
             <li>Peluncuran teknologi jaringan 5G pertama di Asia Tenggara.</li>
-            <li>
-              Pengembangan chip AI berkinerja tinggi yang digunakan oleh
-              perusahaan besar.
-            </li>
-            <li>
-              Dinobatkan sebagai Top 10 perusahaan AI terinovatif selama lima
-              tahun berturut-turut.
-            </li>
+            <li>Pengembangan chip AI berkinerja tinggi.</li>
+            <li>Dinobatkan sebagai Top 10 perusahaan AI terinovatif.</li>
           </ul>
         </div>
 
         <div className="mb-16 mt-10">
-          <h3 className="text-4xl text-center font-semibold mb-6">
-            Meet Our Team
-          </h3>
+          <h3 className="text-4xl text-center font-semibold mb-6">Meet Our Team</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {[
-              {
-                name: "jane sniper",
-                title: "Chief Technology Officer",
-                description:
-                  "Berpengalaman dalam pengembangan AI dan memimpin tim inovasi teknologi kami.",
-                imgSrc: "https://randomuser.me/api/portraits/women/45.jpg",
-              },
-              {
-                name: "John Doe",
-                title: "Lead Software Engineer",
-                description:
-                  "Spesialis dalam jaringan dan keamanan siber dengan pengalaman lebih dari 10 tahun.",
-                imgSrc: "https://randomuser.me/api/portraits/men/34.jpg",
-              },
-              {
-                name: "Jane Smith",
-                title: "Product Manager",
-                description:
-                  "Mengelola strategi produk dan memastikan kualitas terbaik untuk setiap solusi yang kami tawarkan.",
-                imgSrc: "https://randomuser.me/api/portraits/women/68.jpg",
-              },
-            ].map((member, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center p-8 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow"
-              >
-                <Image
-                  src={member.imgSrc}
-                  alt={member.name}
-                  width={50}
-                  height={50}
-                  priority
-                  className="w-32 h-32 rounded-full mb-4 object-cover border-2 border-blue-600"
-                />
-                <h4 className="text-2xl font-semibold">{member.name}</h4>
-                <p className="text-blue-600">{member.title}</p>
-                <p className="text-gray-700 text-center mt-2">
-                  {member.description}
-                </p>
-              </div>
-            ))}
+            <div className="flex flex-col items-center p-8 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+              <Image src="https://randomuser.me/api/portraits/women/45.jpg" alt="Jane Sniper" width={100} height={100} className="w-32 h-32 rounded-full mb-4 object-cover border-2 border-blue-600" />
+              <h4 className="text-2xl font-semibold">Jane Sniper</h4>
+              <p className="text-blue-600">Chief Technology Officer</p>
+              <p className="text-gray-700 text-center mt-2">
+                Berpengalaman dalam pengembangan AI.
+              </p>
+            </div>
+            <div className="flex flex-col items-center p-8 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+              <Image src="https://randomuser.me/api/portraits/men/34.jpg" alt="John Doe" width={100} height={100} className="w-32 h-32 rounded-full mb-4 object-cover border-2 border-blue-600" />
+              <h4 className="text-2xl font-semibold">John Doe</h4>
+              <p className="text-blue-600">Lead Software Engineer</p>
+              <p className="text-gray-700 text-center mt-2">
+                Spesialis dalam jaringan dan keamanan siber.
+              </p>
+            </div>
+            <div className="flex flex-col items-center p-8 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+              <Image src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jane Smith" width={100} height={100} className="w-32 h-32 rounded-full mb-4 object-cover border-2 border-blue-600" />
+              <h4 className="text-2xl font-semibold">Jane Smith</h4>
+              <p className="text-blue-600">Product Manager</p>
+              <p className="text-gray-700 text-center mt-2">
+                Mengelola strategi produk.
+              </p>
+            </div>
           </div>
         </div>
+
         <div className="text-center">
-          <h3 className="text-4xl font-semibold mb-6 text-blue-600">
-            Join Us in Shaping the Future
-          </h3>
-          <p className="text-lg leading-relaxed text-gray-700 mb-8">
-            Bersama Naufal Technology, mari kita ciptakan masa depan yang
-            lebih terhubung, aman, dan cerdas. Bergabunglah dengan kami dan
-            rasakan dampak inovasi kami.
-          </p>
-          <button className="px-8 py-3 text-lg font-semibold bg-blue-600 text-white rounded-full shadow-md hover:bg-blue-700 transition-colors">
-            <Link href={"/contact"}>Contact Us</Link>
+          <h3 className="text-4xl font-semibold mb-6 text-blue-600">Join Us in Shaping the Future</h3>
+          <button className="px-8 py-3 text-lg font-semibold bg-blue-600 text-white rounded-full hover:bg-blue-700">
+            <Link href="/contact">Contact Us</Link>
           </button>
         </div>
       </div>

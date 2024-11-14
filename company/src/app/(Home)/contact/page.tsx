@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="flex py-16 mt-20 min-h-screen bg-gradient-to-b from-slate-200 to-slate-100 text-gray-800"
+      className="flex py-16 mt-16 min-h-screen bg-gradient-to-b from-slate-200 to-slate-100 text-gray-800"
     >
       <div className="max-w-5xl mx-auto px-6 md:px-12 flex flex-col md:flex-row gap-12 items-center">
         <div className="flex-1">
