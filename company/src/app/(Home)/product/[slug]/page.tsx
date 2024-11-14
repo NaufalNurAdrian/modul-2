@@ -13,16 +13,14 @@ export async function generateMetadata({
   const { title, price, thumbnail } = product.fields;
   const imageUrl = `https:${thumbnail.fields.file.url}`;
 
-
   return {
     title: `${title} | Naufal Technology's`,
-    description: product.fields.description,
+    description: `${title}`,
     keywords: `${title}, ${price}, AI, technology, product, innovation, chip manufacturing, networking`,
     openGraph: {
       title: `${title} - Naufal Technology's`,
-      description: product.fields.description,
+      description: `${title}`,
       url: `https://naufal-technology.vercel.app/products/${params.slug}`,
-      type: "product",
       images: [
         {
           url: imageUrl,
@@ -35,11 +33,12 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: `${title} - Naufal Technology's`,
-      description: product.fields.description,
+      description: `${title}`,
       images: [imageUrl],
     },
   };
 }
+
 
 export default async function DetailProduct({
   params,
